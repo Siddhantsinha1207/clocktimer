@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2rem 1rem;
+}
+
+html {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+h1 {
+  letter-spacing: 6px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  list-style: none;
+  gap: 0.5rem;
+  font-size: 2rem;
+}
