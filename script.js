@@ -1,16 +1,31 @@
 const hours = document.querySelector(".hours");
 const minutes = document.querySelector(".minutes");
 const seconds = document.querySelector(".seconds");
+const stopBtn = document.querySelector(".stop");
+const startBtn = document.querySelector(".start");
+const clearBtn = document.querySelector(".clear");
 
-function handleTimer() {
-  const time = setInterval(function () {
-    seconds.textContent = Number(seconds.textContent) - 1;
+console.log(seconds.value);
+
+startBtn.addEventListener("click", function () {
+  if (seconds.value <= 0) return;
+  if (seconds.value > 60) {
+    minutes.value = Math.floor(seconds.value / 60);
+    seconds.value = seconds.value % 60;
+  }
+  const timer = setInterval(function () {
+    console.log(seconds.textContent);
+    seconds.value = seconds.value - 1;
     hours.textContent = hours.textContent.padStart(2, 0);
     minutes.textContent = minutes.textContent.padStart(2, 0);
-    seconds.textContent = seconds.textContent.padStart(2, 0);
+    seconds.value = seconds.value.padStart(2, 0);
 
-    if (Number(seconds.textContent) === 0) clearInterval(time);
+    if (Number(seconds.value) === 0) clearInterval(timer);
   }, 1000);
-}
+});
 
-handleTimer();
+clearBtn.addEventListener("click", function () {
+  seconds.value = seconds.value.padStart(2, 0);
+  seconds.value = minutes.value.padStart(2, 0);
+  seconds.value = hours.value.padStart(2, 0);
+});
