@@ -65,6 +65,13 @@ button:active {
   transform: scaleX(0.95);
 }
 
+button:disabled {
+  background-color: gray;
+  box-shadow: 0 0 0 rgba(0, 0, 0);
+  cursor: default;
+  transform: none;
+}
+
 .stop {
   background-color: rgba(221, 0, 0, 0.6);
   color: white;
